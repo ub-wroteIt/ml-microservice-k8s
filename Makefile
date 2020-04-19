@@ -5,10 +5,10 @@ setup:
 install:
 
 	pip install --upgrade pip &&\
-		pip install -r requirements.txt
+	pip install -r requirements.txt
 	# Download hadolint binary and set it as executable
-  	curl -sL -o ${HADOLINT} "https://github.com/hadolint/hadolint/releases/download/v1.17.5/hadolint-$(uname -s)-$(uname -m)" \
-    && chmod 700 ${HADOLINT}
+	 wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v1.16.3/hadolint-Linux-x86_64 &&\
+     chmod +x /bin/hadolint
 
 test:
 	# Additional, optional, tests could go here
